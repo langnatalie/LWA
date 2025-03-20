@@ -17,7 +17,7 @@ This code has been tested on MATLAB R2024b Version 24.2.
 3. Global Optimization Toolbox
    
 ### Running
-The main file is `LWAOpt_.m`. Before running it, add to path all other the folders of the project. This code will automatically save the content needed for latter plottings.
+The main file is `LWAOpt_.m`. Before running it, add to path all folders of the project. This code will automatically save the content needed for latter plottings.
 
 ### Plotting
 All plotting functions appear in the `plotting` folder. Load the needed data the has been saved, and provide it as argumets for the functions.
