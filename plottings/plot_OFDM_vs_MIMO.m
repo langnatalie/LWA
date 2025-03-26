@@ -1,5 +1,6 @@
 function plot_OFDM_vs_MIMO(Rates_OFDM_2, Avg_MIMO_rates, Avg_HybMIMO_rates)
 figure;
+M_antennas=[2,4,8];
 labels_legend=strings(1,length(M_antennas)+2);
 SNR_db = -5:5;
 markers=["--*","--o","--x","--^","--p", "--.","--","-+","-h"];
@@ -12,6 +13,7 @@ labels_legend(1)='LWA OFDM';
 % MIMO
 for m=1:length(M_antennas)
     plot(SNR_db,Avg_MIMO_rates(m,:),markers(m))
+    hold on
     labels_legend(m+1)=strcat('MIMO M=',num2str(M_antennas(m)));
 end
 
@@ -23,5 +25,6 @@ xlabel('SNR [dB]')
 ylabel('Sum-rate [bits/sec]')
 legend(labels_legend)
 savefig('.\LWA-OFDMvsMIMO.fig')
+exportgraphics(gca, 'OFDMvsMIMO.pdf', 'ContentType', 'vector', 'BackgroundColor', 'none')
 end
 

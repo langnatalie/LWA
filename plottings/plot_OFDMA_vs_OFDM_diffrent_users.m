@@ -8,34 +8,33 @@ SNR_db=-5:5;
 %%%%%%% N_r = 4
 plot(SNR_db,Rates_OFDM_4,'-*','LineWidth',1.5)
 hold on
-labels_legend(1)='LWA OFDM K=4'; 
+labels_legend(1)='A1, K=4'; 
 
-plot(SNR_db,Rates_OFDMA_4,'-|','LineWidth',1.5)
-labels_legend(2)='LWA OFDMA K=4'; 
+plot(SNR_db,Rates_OFDMA_4,'--*','LineWidth',1.5)
+labels_legend(2)='A2, K=4'; 
 
 
 %%%%%% N_r = 8
-plot(SNR_db,Rates_OFDM_8,'--*','LineWidth',1.5)
+plot(SNR_db,Rates_OFDM_8,'-|','LineWidth',1.5)
 hold on
-labels_legend(3)='LWA OFDM K=8'; 
+labels_legend(3)='A1, K=8'; 
 
-plot(SNR_db,Rates_OFDMA_8,'--o','LineWidth',1.5)
-labels_legend(4)='LWA OFDMA K=8'; 
+plot(SNR_db,Rates_OFDMA_8,'--|','LineWidth',1.5)
+labels_legend(4)='A2, K=8'; 
 
 % %%%%%%% N_r = 16
-plot(SNR_db,Rates_OFDM_16,'--x','LineWidth',1.5)
+plot(SNR_db,Rates_OFDM_16,'-x','LineWidth',1.5)
 hold on
-labels_legend(5)='LWA OFDM K=16'; 
+labels_legend(5)='A1, K=16'; 
 
-plot(SNR_db,Rates_OFDMA_16,'--^','LineWidth',1.5)
-labels_legend(6)='LWA OFDMA K=16'; 
+plot(SNR_db,Rates_OFDMA_16,'--x','LineWidth',1.5)
+labels_legend(6)='A2, K=16'; 
 
 
 xlabel('SNR [dB]')
 ylabel('Sum-rate [bits/sec]')
 legend(labels_legend)
-savefig('\LWA-OFDMvsLWA-OFDMA_different_users.fig');
+savefig('.\LWA-OFDMvsLWA-OFDMA_different_users.fig');
 
-% exportgraphics(gca, 'ofdm.pdf', 'ContentType', 'vector', 'BackgroundColor', 'none')
+exportgraphics(gca, 'LWA-OFDMvsLWA-OFDMA_different_users.pdf', 'ContentType', 'vector', 'BackgroundColor', 'none')
 end
-
